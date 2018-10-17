@@ -10,11 +10,13 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
+    words_quantity = 10
     formatted_text = text.translate(None, '\n\r\r{}'
                                     .format(string.punctuation)).lower()
     formatted_text_list = formatted_text.split(' ')
-    return collections.Counter(filter(lambda item: item != '',
-                                      formatted_text_list)).most_common(10)
+    return collections.Counter(
+        filter(lambda item: item != '',
+               formatted_text_list)).most_common(words_quantity)
 
 
 if __name__ == '__main__':
