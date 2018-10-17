@@ -1,6 +1,29 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+The script calculated the 10 most frequent words in a text.
+
+# Quickstart
+
+Run **lang_frequency.py** with  path to text file 
+
+Example of script launch on Linux, Python 3.5:
+
+```bash
+
+$ python lang_frequency.py <filepath>
+
+The 10 most_frequent_words in the text:
+"the"
+"and"
+"a"
+"of"
+"to"
+"it"
+"in"
+"is"
+"i"
+
+```
 
 # Project Goals
 
