@@ -10,12 +10,12 @@ def load_data(filepath):
 
 def get_most_frequent_words(data_txt):
     words_quantity = 10
-    # не понимаю что ломается. все языки перепробовал. поясните
-    formatted_text = data_txt.translate(
-        None, '\n\r\r{}'.format(string.punctuation)
-    ).lower()
+    trans_dict = dict.fromkeys(string.punctuation)
+    trans_dict.update({'\n': None, '\r': None, '\t': None})
+    translator = str.maketrans(trans_dict)
+    data_txt = data_txt.translate(translator).lower()
     most_frequent_words_list = collections.Counter(
-        filter(lambda item: item != '', formatted_text.split(' '))
+        filter(lambda item: item != '', data_txt.split(' '))
     ).most_common(words_quantity)
     return most_frequent_words_list
 
